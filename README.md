@@ -102,3 +102,8 @@ Projet indépendant de présentation, ni produit ni approuvé par la NASA.
 **Avant une diffusion publique** : les polices *TRIAL-Vargas* et *Bagerich* sont des versions d’essai/démo (licences à acheter ou polices à remplacer), une partie des musiques du disque est encore sous droits, et plusieurs crédits d’images restent à vérifier (`public/data/archives.json`, `CREDITS.md`).
 
 </details>
+
+
+## License
+
+Source code: [MIT](LICENSE). Media (images, video, audio, 3D captures, fonts, texts) are not covered and remain the property of Johann Arata or of their respective authors; all rights reserved.

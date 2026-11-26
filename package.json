@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "description": "Voyageur 1: an interactive site exploring the Voyager Golden Record (1977) and its 116 decoded images in 3D (WebGL 2, no runtime dependencies)",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
