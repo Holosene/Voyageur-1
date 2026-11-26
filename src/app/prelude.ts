@@ -253,7 +253,6 @@ function voyage(root: HTMLElement, resolve: () => void) {
     return s * (1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-a * a)); };
   const MU = 0.72, SIG = 0.18, e0 = erf(-MU / SIG), e1 = erf((1 - MU) / SIG);
   const bell = (x: number) => (erf((x - MU) / SIG) - e0) / (e1 - e0);
-  const cloche = (x: number, t: number) => 0.015 * (1 - (1 - x) * (1 - x)) * (1 - Math.exp(-Math.pow(t / 1.4, 2))) + 0.985 * bell(x);   // la caméra bouge dès le décrochage, mais très lentement la première seconde (quelques pixels), puis la vitesse s'installe
   const reculA = (t: number) => (1 - Math.exp(-Math.pow(t / 0.3, 2))) * (t < 1 ? 1 : 0.5 + 0.5 * Math.cos(Math.PI * Math.min(1, (t - 1) / (TV - 1))));   // (le décrochage : exactement comme avant)
   const bezDe = (Bc: number[][], u: number, i: 0 | 1) => { const v = 1 - u; return v * v * v * Bc[0][i] + 3 * v * v * u * Bc[1][i] + 3 * v * u * u * Bc[2][i] + u * u * u * Bc[3][i]; };
   // la bande de la Terre (vidéo) telle qu'elle est à l'écran au moment du clic : jamais ses bords ne doivent apparaître

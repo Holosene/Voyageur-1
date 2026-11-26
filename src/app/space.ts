@@ -192,7 +192,7 @@ void main() {
   const prog = gl.createProgram()!; gl.attachShader(prog, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(prog);
   if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { c.remove(); return; }
   gl.useProgram(prog);
-  const bufP = gl.createBuffer(), bufL = gl.createBuffer(), bufA = gl.createBuffer(); let n = 0, nl = 0, na = 0;
+  const bufP = gl.createBuffer(), bufL = gl.createBuffer(), bufA = gl.createBuffer(); let n = 0, na = 0;
   const U = (k: string) => gl.getUniformLocation(prog, k);
   const uLens = U('uLens'), uDom = U('uDom'), uArcT = U('uArcT'), uOmega = U('uOmega'), uAp = U('uAp'), uFish = U('uFish'), uView = U('uView'), uOff = U('uOff'), uVoy = U('uVoy'), uVel = U('uVel'), uVis = U('uVis'), uZoom = U('uZoom'), uRoll = U('uRoll'), uLigne = U('uLigne'), uT = U('uT'), uDpr = U('uDpr');
   const F = 4, ST = 12 * F;
@@ -217,7 +217,6 @@ void main() {
     }
     const dp = new Float32Array(base * 12), dl = new Float32Array(n * 24);
     etoiles.forEach((e, i) => { if (i < base) dp.set([...e, 0, 0], i * 12); dl.set([...e, 0, 0], i * 24); dl.set([...e, 1, 0], i * 24 + 12); });
-    nl = n * 2;
     // les traînées courbes (rotation) : un ruban de 8 segments par étoile, du halo de tête jusqu'à la queue
     const K = [-0.2, 0, 0.1, 0.22, 0.36, 0.52, 0.7, 0.85, 1], da: number[] = [];
     etoiles.forEach((e) => { for (let j = 0; j < K.length - 1; j++) for (const [b, c] of [[K[j], -1], [K[j], 1], [K[j + 1], -1], [K[j + 1], -1], [K[j], 1], [K[j + 1], 1]]) da.push(...e, b, c); });
