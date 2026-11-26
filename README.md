@@ -1,3 +1,41 @@
+# Voyager 1 and the Golden Record
+
+An interactive introduction to the 116 images of the Voyager Golden Record (1977), each one explored in volume.
+
+[![Voyager 1: the Golden Record spinning among its images](https://raw.githubusercontent.com/holosene/Portfolio/main/public/media/voyageur-1/vignette.webp)](https://holosene.fr/portfolio/voyageur-1/)
+
+**Live:** [holosene.fr/portfolio/voyageur-1](https://holosene.fr/portfolio/voyageur-1/) · **Stack:** WebGL 2, TypeScript, Vite, Web Audio · **Year:** 2026
+
+## About
+
+In 1977 the record's images were cut into the groove as sound. Decoded in 2017 by Ron Barry from a copy kept on Earth, they still carry the marks of that journey: streaks, scan lines, losses.
+
+The site tells that story through NASA archive photographs, then leads to the record, spinning among its images. Each image re-forms as Gaussian splats, stretched along the signal's scan lines and pulled apart where the signal damaged them. The whole experience is set to the record's own sounds.
+
+No runtime dependency: the renderer, the signal simulation and the audio are written from scratch.
+
+## Getting started
+
+Requires Node 22.6 or later.
+
+```bash
+npm install
+npm run dev        # http://localhost:5177
+npm test           # signal chain and renderer tests
+npm run build      # static site in dist/
+```
+
+Each push to `main` is deployed to GitHub Pages by [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
+
+## Credits
+
+Record images: NASA / JPL. Decoding: Ron Barry (2017). Full list in [CREDITS.md](CREDITS.md).
+
+---
+
+<details>
+<summary><strong>Version française</strong></summary>
+
 # Voyager 1 and the Golden Record · Voyageur 1 et le disque d’or
 
 Site web de découverte du **Voyager Golden Record**, le disque d’or embarqué en 1977 à bord de Voyager 1 et Voyager 2.
@@ -62,3 +100,5 @@ Voir [`CREDITS.md`](CREDITS.md). Images du disque : NASA / JPL ; décodage : Ron
 Projet indépendant de présentation, ni produit ni approuvé par la NASA.
 
 **Avant une diffusion publique** : les polices *TRIAL-Vargas* et *Bagerich* sont des versions d’essai/démo (licences à acheter ou polices à remplacer), une partie des musiques du disque est encore sous droits, et plusieurs crédits d’images restent à vérifier (`public/data/archives.json`, `CREDITS.md`).
+
+</details>
